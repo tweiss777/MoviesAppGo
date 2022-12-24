@@ -1,0 +1,41 @@
+
+.spinner{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  animation-name: spin;
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+}
+
+.spinner-wrapper{
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  border-color: black;
+}
+
+@keyframes spin {
+  0%{
+/*     left: 0px */
+    transform: rotate(0deg);
+    background-color: #00d8ff;
+  }
+  0%{
+/*     left: 100px; */
+    transform: rotate(360deg);
+    background-color: #42b883;
+  }
+  75%{
+/*     left: 0px; */
+    transform: rotate(-360deg);
+        background-color: #00d8ff;
+
+    
+  }
+  100%{
+/*     left:100px ; */
+    transform: rotate(0);
+    background-color: #42b883;
+  }
+}

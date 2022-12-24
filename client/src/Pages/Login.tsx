@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
-
+import useAuthentication from '../hooks/useAuthentication'
 
 export default function Login(){
+  // username and password states;
   const [userName,setUserName] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
+  const [password, setPassword] = useState<string>('')  
+  const { login, isAuthenticating} = useAuthentication() 
   
   // function to log the user in
-  function loginUser(event: React.FormEvent<HTMLInputElement>){
-    console.log('logging in user')
-    // route user to dashboard
-    console.log(`username: ${userName}`)
-    console.log(`passowrd: ${password}`)
+  function loginUser(event: any){
+    login(userName,password)
     event.preventDefault()
   }
 
@@ -20,18 +19,15 @@ export default function Login(){
     
       <div>
       {/* takes the user back to the main page */}
-      <Link to={'..'}>
-        Back
-      </Link>
         <h1>Login Page</h1>
         <div>
-          <form method="post">
-            
+          <form onSubmit={loginUser} method="post" > 
             <label>Username</label>
-            <input onChange={(event: React.ChangeEvent<HTMLInputElement>) => setUserName(event.target.value)} type="text" name="username" />
+            <input value={userName} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setUserName(event.target.value)} type="text" name="username" />
             
             <label>Password</label>
-            <input onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)} type="passwordtext" name="password" />
+            <input value={password}  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)} type="password" name="password" />
+            <input type="submit" value="Login" />            
 
           </form>
         </div>
