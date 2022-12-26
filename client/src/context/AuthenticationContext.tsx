@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+
 //Authentication context interface
 interface IAuthenticationContext {
  login: Function,
