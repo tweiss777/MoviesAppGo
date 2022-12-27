@@ -1,17 +1,37 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { CookiesProvider } from 'react-cookie'
+import Login from './Pages/Login'
 import './index.css'
-import { router } from './routes/router'
-import { RouterProvider } from 'react-router-dom'
+import DashBoard from './Pages/Dashboard'
+import {
+  BrowserRouter,
+  Route,
+  Routes
+}
+  from 'react-router-dom'
+
 import AuthenticationProvider from './context/AuthenticationContext'
+import ProtectedRoute from './Components/ProtectedRoute'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <CookiesProvider>
-      <AuthenticationProvider>
-        <RouterProvider router={router} />
+    <BrowserRouter>
+      <CookiesProvider>
+        <AuthenticationProvider>
+          <Routes>
+            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<Login />} />
+            <Route path='/dashboard' element={
+              <ProtectedRoute>
+                <DashBoard/>
+              </ProtectedRoute>
+            } />
+          </Routes>
       </AuthenticationProvider>
-    </CookiesProvider>
+      </CookiesProvider>
+
+    </BrowserRouter>
+
   </React.StrictMode>,
 )

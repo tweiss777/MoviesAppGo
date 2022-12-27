@@ -43,28 +43,32 @@ export default function AuthenticationProvider({children}: IProps){
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false)  
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [authErrors, setAuthErrors] = useState<boolean>(false)
-  const [cookies, setCookie, removeCookie] = useCookies(['authenticated'])
+  const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const navigate = useNavigate()
 
 
   useEffect(() => {
     console.log('checking if user is authenticated...')
-    if(cookies['authenticated']){
-      console.log('redirecting to dashboard')
+    if(cookies['token']){
+      console.log('Authenticated')
     } else {
+      console.log('Not Authenticated')
       navigate('/login')
     }
-  })
+  },[isAuthenticated])
 
 
   // use this to handle login
   const login: Function = (userName: string, password: string) => {
+    setAuthErrors(false)
     console.log("loggging user in")
     const user = users.find(user => user.username === userName.toLowerCase() && user.password === password.toLowerCase())
     if(user){
-      setCookie('authenticated', 'true')
+      setCookie('token', 'true')
+      setIsAuthenticated(!isAuthenticated)
+      navigate('/dashboard')
     } else {
-
+      setAuthErrors(true)
     }
     
   }
@@ -72,13 +76,16 @@ export default function AuthenticationProvider({children}: IProps){
 
    const logout: Function = () => {
     console.log("logging use out")
+    removeCookie('token')
+    setIsAuthenticated(!isAuthenticated)
   }
   const contextData: IAuthenticationContext = {
     login,
     logout,
     isAuthenticated,
     isAuthenticating,
-    isAdmin
+    isAdmin,
+    authErrors,
   }     
 
   return(
