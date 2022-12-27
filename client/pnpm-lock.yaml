@@ -5,6 +5,7 @@ specifiers:
   '@types/match-sorter': ^6.0.0
   '@types/react': ^18.0.26
   '@types/react-dom': ^18.0.9
+  '@types/react-router': ^5.1.20
   '@types/react-router-dom': ^5.3.3
   '@types/sort-by': ^1.2.0
   '@vitejs/plugin-react-swc': ^3.0.0
@@ -21,7 +22,6 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
-  '@types/react-router-dom': 5.3.3
   localforage: 1.10.0
   match-sorter: 6.3.1
   node-sass: 8.0.0
@@ -36,6 +36,8 @@ devDependencies:
   '@types/match-sorter': 6.0.0
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
+  '@types/react-router': 5.1.20
+  '@types/react-router-dom': 5.3.3
   '@types/sort-by': 1.2.0
   '@vitejs/plugin-react-swc': 3.0.1_vite@4.0.1
   sass: 1.57.1
@@ -435,7 +437,7 @@ packages:
 
   /@types/history/4.7.11:
     resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
-    dev: false
+    dev: true
 
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
@@ -480,15 +482,15 @@ packages:
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.0.26
-      '@types/react-router': 5.1.19
-    dev: false
+      '@types/react-router': 5.1.20
+    dev: true
 
-  /@types/react-router/5.1.19:
-    resolution: {integrity: sha512-Fv/5kb2STAEMT3wHzdKQK2z8xKq38EDIGVrutYLmQVVLe+4orDFquU52hQrULnEHinMKv9FSA6lf9+uNT1ITtA==}
+  /@types/react-router/5.1.20:
+    resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.0.26
-    dev: false
+    dev: true
 
   /@types/react/18.0.26:
     resolution: {integrity: sha512-hCR3PJQsAIXyxhTNSiDFY//LhnMZWpNNr5etoCqx/iUfGc5gXWtQR2Phl908jVR6uPXacojQWTg4qRpkxTuGug==}

@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 //Authentication context interface
 interface IAuthenticationContext {
@@ -44,6 +44,7 @@ export default function AuthenticationProvider({children}: IProps){
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [authErrors, setAuthErrors] = useState<boolean>(false)
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
+  const location = useLocation()
   const navigate = useNavigate()
 
 

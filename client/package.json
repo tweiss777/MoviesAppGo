@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/react-router-dom": "^5.3.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "node-sass": "^8.0.0",
@@ -24,6 +23,8 @@
     "@types/match-sorter": "^6.0.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
     "@types/sort-by": "^1.2.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "sass": "^1.57.1",
