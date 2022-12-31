@@ -4,6 +4,7 @@ import { CookiesProvider } from 'react-cookie'
 import Login from './Pages/Login'
 import './index.css'
 import DashBoard from './Pages/Dashboard'
+import Profile from './Pages/Profile'
 import {
   BrowserRouter,
   Route,
@@ -24,11 +25,16 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path='/' element={<Login />} />
             <Route path='/dashboard' element={
               <ProtectedRoute>
-                <DashBoard/>
+                <DashBoard />
+              </ProtectedRoute>
+            } />
+            <Route path='/profile' element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             } />
           </Routes>
-      </AuthenticationProvider>
+        </AuthenticationProvider>
       </CookiesProvider>
 
     </BrowserRouter>

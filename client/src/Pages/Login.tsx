@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
 import useAuthentication from '../hooks/useAuthentication'
+import '../scss/Login.scss'
+
 
 export default function Login(){
   // username and password states;
@@ -14,13 +15,10 @@ export default function Login(){
     event.preventDefault()
   }
 
-  return(
-    <>
-    
-      <div>
+  return(   
+      <div className="login-page">
       {/* takes the user back to the main page */}
-        <h1>Login Page</h1>
-        <div>
+        <div className='login-container'>
           <form onSubmit={loginUser} method="post" > 
             <label>Username</label>
             <input value={userName} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setUserName(event.target.value)} type="text" name="username" />
@@ -32,7 +30,6 @@ export default function Login(){
           </form>
         </div>
       </div>
-    </>
   ) 
 
 }

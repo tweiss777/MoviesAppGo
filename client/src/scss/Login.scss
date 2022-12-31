@@ -1,0 +1,22 @@
+@use './mixins/grid.scss';
+$black: #000000;
+
+.login-page {
+  width: 100%;
+  background: no-repeat url(https://wallpaperaccess.com/full/4482739.jpg);
+  background-size: cover;
+  height: inherit;
+  .login-container {
+    @include grid.flex-row;
+    justify-content: center;
+    border: solid $black;
+    height: 200px;
+    width: 200px;
+    
+    input{
+      border-radius: 25px;
+    }
+  
+  }
+
+}

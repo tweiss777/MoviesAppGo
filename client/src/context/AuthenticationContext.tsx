@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 interface IAuthenticationContext {
  login: Function,
  logout: Function,
+ setIsAuthenticated: Function,
  isAdmin: boolean
  authErrors: boolean
  isAuthenticated: boolean 
@@ -21,6 +22,8 @@ const users: any []= [
 const AuthenticationContextDefaultValues: IAuthenticationContext = {
   login: () =>  console.log("logging in"),
   logout: () => console.log("logging out"),
+  setIsAuthenticated: () => console.log("set is authenticating"),
+
   authErrors: false,
   isAuthenticated: false,
   isAuthenticating: false,
@@ -46,12 +49,22 @@ export default function AuthenticationProvider({children}: IProps){
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const location = useLocation()
   const navigate = useNavigate()
-
+  
 
   useEffect(() => {
+    
+    console.log("is Authenticated" + isAuthenticated)
+    
+    
     console.log('checking if user is authenticated...')
-    if(cookies['token']){
-      console.log('Authenticated')
+    console.log('token')
+    console.log(cookies['token'])
+    if(cookies['token'] === 'true'){
+        const prevLocation = location.pathname
+        setIsAuthenticated(true)
+        console.log('Authenticated')
+        
+        navigate(prevLocation)
     } else {
       console.log('Not Authenticated')
       navigate('/login')
@@ -66,7 +79,7 @@ export default function AuthenticationProvider({children}: IProps){
     const user = users.find(user => user.username === userName.toLowerCase() && user.password === password.toLowerCase())
     if(user){
       setCookie('token', 'true')
-      setIsAuthenticated(!isAuthenticated)
+      setIsAuthenticated(true)
       navigate('/dashboard')
     } else {
       setAuthErrors(true)
@@ -83,6 +96,7 @@ export default function AuthenticationProvider({children}: IProps){
   const contextData: IAuthenticationContext = {
     login,
     logout,
+    setIsAuthenticated,
     isAuthenticated,
     isAuthenticating,
     isAdmin,
