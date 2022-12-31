@@ -53,12 +53,6 @@ export default function AuthenticationProvider({children}: IProps){
 
   useEffect(() => {
     
-    console.log("is Authenticated" + isAuthenticated)
-    
-    
-    console.log('checking if user is authenticated...')
-    console.log('token')
-    console.log(cookies['token'])
     if(cookies['token'] === 'true'){
         const prevLocation = location.pathname
         setIsAuthenticated(true)

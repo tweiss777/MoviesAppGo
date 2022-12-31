@@ -1,22 +1,48 @@
 @use './mixins/grid.scss';
-$black: #000000;
-
+@use './colors.scss';
 .login-page {
   width: 100%;
   background: no-repeat url(https://wallpaperaccess.com/full/4482739.jpg);
   background-size: cover;
   height: inherit;
-  .login-container {
-    @include grid.flex-row;
-    justify-content: center;
-    border: solid $black;
-    height: 200px;
-    width: 200px;
-    
-    input{
-      border-radius: 25px;
-    }
+  @include grid.flex-row;
+  justify-content: flex-end;
+  align-items: center; 
   
+  .login-container {
+    padding: 15px;
+    @include grid.flex-row;
+    flex-basis: 25%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3%;
+    background-color: colors.$white;
+    border: solid colors.$black;
+    height: 200px;
+    form{
+      width: 100%;
+      justify-content: space-between;
+      .form-item{
+        @include grid.flex-col;
+        input{
+          font-size: 1.2rem;
+          height: 40px;
+          border-radius: 15px;
+          width: inherit;
+          
+        }
+        &:last-child{
+          input{
+
+            height: 50px;
+            background-color: colors.$go-blue;
+
+          };
+        }
+        
+      }
+    }
+      
   }
 
 }

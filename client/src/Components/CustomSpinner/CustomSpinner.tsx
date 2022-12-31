@@ -1,5 +1,5 @@
 import React from 'react'
-import './Spinner.scss'
+import './CustomSpinner.scss'
 
 interface IProps{
   showSpinner: boolean

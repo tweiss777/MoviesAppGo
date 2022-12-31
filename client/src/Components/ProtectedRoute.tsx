@@ -9,15 +9,7 @@ interface IProps {
   children: JSX.Element | JSX.Element[];
 }
 export default function ProtectedRoute({ children }: IProps) {
-  const { setIsAuthenticated, isAuthenticated } = useAuthentication()
-  const [ cookies ] = useCookies(['token'])
-  const location = useLocation()
-  useEffect(() => {
-    if(cookies)
-    console.log(location)
-    console.log(history)
-    console.log(`is authenticated = ${isAuthenticated}`)
-  })
+  const { isAuthenticated } = useAuthentication()
   
   return isAuthenticated? <> { children } </> : <Navigate to="/login" />
 }``
