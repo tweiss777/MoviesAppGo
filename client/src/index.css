@@ -6,10 +6,18 @@ html{
   
 body {
   margin: 0;
-  font-family: 'Jetbrains Mono', 'sans-serif';
+  font-family:  'Jetbrains Mono', 'sans-serif';
   height: 100%;
   width: 100%;
 }
 #root{
   height: inherit;
+}
+
+@media(prefers-color-scheme: dark){
+  body{
+    background-color: #191919;
+    color: #ffffff;
+  }
+  
 }

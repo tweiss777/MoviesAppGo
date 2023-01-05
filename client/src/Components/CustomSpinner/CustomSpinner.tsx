@@ -12,7 +12,7 @@ export default function CustomSpinner({showSpinner}:IProps){
   return (
     <>
       {showSpinner ? 
-        <div className="spinner"></div>: <></>
+        <div className="spinner"></div> : <></>
       }
     </>
       

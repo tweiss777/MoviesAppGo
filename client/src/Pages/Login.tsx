@@ -13,7 +13,7 @@ export default function Login() {
   const [cookie] = useCookies(['token'])
   const { login, isAuthenticating } = useAuthentication()
   useEffect(() => {
-    if(cookie.token){
+    if (cookie.token) {
       console.log(history)
       history.back()
     }
@@ -44,12 +44,12 @@ export default function Login() {
           <div className="form-item">
             <input type="submit" value="Login" />
           </div>
-            <div className="login-message">
-              <CustomSpinner showSpinner={true} />
-            </div>
-  
+          <div className="login-message">
+            <CustomSpinner showSpinner={true} /><span style={{ position: 'relative', bottom: '0.5rem', left: '0.5rem' }}>Loggin in</span>
+          </div>
 
-          </form>
+
+        </form>
       </div>
     </div>
   )

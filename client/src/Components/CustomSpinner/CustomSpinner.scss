@@ -1,8 +1,9 @@
 
 .spinner{
-  margin: 10px 0;
-  height: 20px;
-  width: 20px;
+  display: inline-block;
+  width: 2.0rem;
+  height: 2.0rem;
+  background-color: #00d8ff;
   animation-name: spin;
   animation-duration: 1.7s;
   animation-iteration-count: infinite;
@@ -29,7 +30,7 @@
   }
   100%{
 /*     left:100px ; */
-    transform: rotate(0);
+    transform: rotate(0deg);
     background-color: #42b883;
   }
 }

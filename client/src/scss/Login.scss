@@ -18,7 +18,7 @@
     margin: 0 3%;
     background-color: colors.$white;
     border: solid colors.$black;
-    height: 200px;
+    height: 250px;
     form{
       width: 100%;
       justify-content: space-between;
@@ -40,6 +40,10 @@
           };
         }
         
+        
+      }
+      .login-message{
+        padding: 5px 0; 
       }
     }
       
