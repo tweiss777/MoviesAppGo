@@ -1,4 +1,4 @@
-export interface Movie {
+export interface IMovie {
   id: number;
   movie_name: string;
   year: number;
@@ -7,9 +7,9 @@ export interface Movie {
 }
 
 // movies mock
-export const movies: Movie[] = [
+export const movies: IMovie[] = [
   {
-		id:    1,
+		id: 1,
 		movie_name:  "Transformers",
 		genre: "Action",
 		year:  2012,
