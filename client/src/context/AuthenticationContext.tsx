@@ -56,11 +56,11 @@ export default function AuthenticationProvider({children}: IProps){
     if(cookies['token'] === 'true'){
         const prevLocation = location.pathname
         setIsAuthenticated(true)
-        console.log('Authenticated')
+        // console.log('Authenticated')
         
         navigate(prevLocation)
     } else {
-      console.log('Not Authenticated')
+      // console.log('Not Authenticated')
       navigate('/login')
     }
   },[isAuthenticated])

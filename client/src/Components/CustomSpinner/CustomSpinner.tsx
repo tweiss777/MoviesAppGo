@@ -1,19 +1,13 @@
 import React from 'react'
 import './CustomSpinner.scss'
 
-interface IProps{
-  showSpinner: boolean
-}
 
-
-export default function CustomSpinner({showSpinner}:IProps){
+export default function CustomSpinner(){
 
 
   return (
     <>
-      {showSpinner ? 
-        <div className="spinner"></div> : <></>
-      }
+      <div className="spinner"></div>
     </>
       
     )

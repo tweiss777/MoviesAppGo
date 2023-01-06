@@ -1,24 +1,42 @@
 import MovieItem from '../Components/MovieItem'
 import { getMovies } from '../data/movies' 
 import { useState, useEffect } from 'react'
-import { IMovie } from '../data/moviesmock'
+import { IMovie } from '../data/IMovie'
+import CustomSpinner from '../Components/CustomSpinner/CustomSpinner'
+
 export default function DashBoard(){
+  
   const [movies, setMovies] = useState<IMovie[]>([])
+  const [fetchError,setFetchError] = useState<boolean>(false)
+  const [fetching, setFetching] = useState<boolean>(false)
+  
   useEffect(() => {
     const fetchMovies = async () => {
-      const movies: IMovie[] = await getMovies()
-      setMovies(movies)
+      try{
+        setFetching(true)
+        const movies: IMovie[] = await getMovies()
+        setMovies(movies)
+      } catch(err){
+        setFetchError(true)
+      } finally{
+        setTimeout(() => setFetching(false),2000)
+      }
     }
      fetchMovies()
-  })
+  },[])
 
-  const movieComponents: JSX.Element [] = movies.map(movie => <MovieItem id={movie.id} movie_name={movie.movie_name} year={movie.year} genre={movie.genre} />)
+  const movieComponents: JSX.Element [] = movies.map(movie => <MovieItem key={movie.id} id={movie.id} movie_name={movie.movie_name} year={movie.year} genre={movie.genre} />)
 
   return (
     <div>
-      <h1>Dashboard under construction</h1>
+      <h1>Movies List</h1>
+      {fetching && 
       <div>
-        { movieComponents }
+        <CustomSpinner /><span>Fetching movies...</span>
+      </div>  
+      }
+      <div>
+        {!fetchError? movieComponents.length > 0? movieComponents: 'No Movies' : <p style={{color: '#ff0000'}}>Error Fetching movies 😥</p> }
       </div>
     </div>
   )

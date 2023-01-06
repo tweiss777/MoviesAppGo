@@ -8,9 +8,10 @@ import (
 type Movie struct {
 	Id    int    `json:"id"`
 	Name  string `json:"movie_name"`
-	Year  int    `json:year`
-	Genre string `json:genre`
+	Year  int    `json:"year"`
+	Genre string `json:"genre"`
 }
+
 // mock data that we will use to fetch movies
 // soon we will replace this with an actual database
 var movies []Movie = []Movie{

@@ -45,7 +45,7 @@ export default function Login() {
             <input type="submit" value="Login" />
           </div>
           <div className="login-message">
-            <CustomSpinner showSpinner={true} /><span style={{ position: 'relative', bottom: '0.5rem', left: '0.5rem' }}>Loggin in</span>
+            <CustomSpinner /><span style={{ position: 'relative', bottom: '0.5rem', left: '0.5rem' }}>Loggin in</span>
           </div>
 
 

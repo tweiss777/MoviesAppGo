@@ -1,4 +1,4 @@
-import { IMovie } from "../data/moviesmock";
+import { IMovie } from "../data/IMovie";
 import '../scss/MovieItem.scss'
 
 interface IProps extends IMovie{}
