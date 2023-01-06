@@ -1,4 +1,4 @@
-package MovieData
+package Data
 
 import (
 	"errors"
