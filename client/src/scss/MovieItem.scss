@@ -1,0 +1,25 @@
+@use './mixins/grid.scss';
+@use './colors.scss';
+
+
+
+.movie-item{
+  width: 300px;
+  border-radius: 10px;
+  border: solid 1px colors.$go-dark-blue;
+  margin: 10px .5rem;   
+  background-color: colors.$go-blue;
+  color: colors.$go-dark-blue;
+}
+
+@media (max-width: 800px){
+  .movie-item{
+    width: 100%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 800px) {
+  .movie-item{
+    width: 300px; 
+  }
+}
