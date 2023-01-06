@@ -1,0 +1,18 @@
+@use './colors.scss';
+@use './mixins/grid.scss';
+
+
+.movie-editor{
+  border: solid orange 2px;
+  @include grid.flex-col;
+  .form-row{
+    @include grid.flex-col;
+    label{
+      font-size: 1.3rem; 
+    }
+    input{
+      width: 100%;
+    }
+  }
+
+}

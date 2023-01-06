@@ -1,0 +1,32 @@
+@use './colors.scss';
+.dashboard-container{
+  .button-style{
+    border-radius: 10px;
+    border: solid 1px colors.$go-dark-blue;
+    margin: 10px .5rem; 
+    background-color: colors.$go-blue ;
+    color: colors.$go-dark-blue ;
+    width: 300px;
+    font-size: 1.0rem;
+    &:hover {
+      background-color: colors.$amazon;
+      color: colors.$amazon-dark;
+    }
+  }
+
+  @media (max-width: 800px){
+    .button-style{
+      width: 100%;
+    }
+  }
+  
+  @media (orientation: landscape) and (min-width: 800px) {
+    .button-style{
+      width: 300px; 
+    }
+  }
+}
+
+
+
+
