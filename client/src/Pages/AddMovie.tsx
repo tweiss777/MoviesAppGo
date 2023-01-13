@@ -1,11 +1,28 @@
+import { Link } from "react-router-dom";
 import MovieEditor from "../Components/MovieEditor";
-import '../scss/AddmMoviePage.scss';
-export default function AddMovie(){
+import '../scss/AddMoviePage.scss';
+export default function AddMovie() {
 
 
-  return(
+  return (
     <div className="add-movie">
-      <MovieEditor />
+      <Link to="/dashboard">
+        <button className="button-style">
+          Back
+        </button>
+      </Link>
+      <MovieEditor
+        title={""}
+        genre={""}
+        year={0}
+        setTitle={undefined}
+        setGenre={undefined}
+        setYear={undefined}
+        handleSubmit={undefined}
+      />
+      <button className="button-style">
+        Add Movie
+      </button>
     </div>
-  )  
+  )
 }

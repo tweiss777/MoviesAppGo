@@ -15,6 +15,7 @@ import {
 import AuthenticationProvider from './context/AuthenticationContext'
 import ProtectedRoute from './Components/ProtectedRoute'
 import MovieEditor from './Components/MovieEditor'
+import AddMovie from './Pages/AddMovie'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -34,7 +35,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                 <Profile />
               </ProtectedRoute>
             } />
-            <Route path='/add-movie' element={<MovieEditor />} />
+            <Route path='/add-movie' element={<AddMovie />} />
 
           </Routes>
         </AuthenticationProvider>
