@@ -1,5 +1,7 @@
 package Data
 
+import "errors"
+
 /*
 *
 Represents user Data
@@ -11,6 +13,7 @@ type User struct {
 	Password  string `json: "password"`
 }
 
+// users list hardcoded for now
 var users []User = []User{
 	{
 		FirstName: "Tal",
@@ -24,4 +27,9 @@ var users []User = []User{
 		UserName:  "tweiss747@gmail.com",
 		Password:  "abc123",
 	},
+}
+
+func AddUser(newUser User) (bool, error) {
+	notImplementedError := errors.New("Not implemented")
+	return false, notImplementedError
 }
