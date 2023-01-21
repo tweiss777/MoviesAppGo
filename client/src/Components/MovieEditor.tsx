@@ -1,6 +1,6 @@
 import { useState } from "react"
 import '../scss/MovieEditor.scss'
-
+import '../scss/AddMoviePage.scss'
 interface IProps {
   title: string,
   genre: string,
@@ -14,7 +14,12 @@ interface IProps {
 export default function MovieEditor({title,genre,year, setTitle, setYear, setGenre, handleSubmit}: IProps) {
 
   function submitData(){
-    handleSubmit()
+    const movie = {
+      title,
+      genre,
+      year,
+    }
+    handleSubmit(movie)
   }
 
   return (
@@ -32,7 +37,9 @@ export default function MovieEditor({title,genre,year, setTitle, setYear, setGen
         <input type="text" value={year} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setYear(event.target.value)} />
       </div>
       <div className="form-row">
-        <button class
+        <button onClick={submitData} className="btn-style">
+          Submit
+        </button>
       </div>
     </div>
   )
