@@ -7,7 +7,7 @@ import (
 
 type Movie struct {
 	Id    int    `json:"id"`
-	Name  string `json:"movie_name"`
+	Name  string `json:"title"`
 	Year  int    `json:"year"`
 	Genre string `json:"genre"`
 }

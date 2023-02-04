@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react'
 import { IMovie } from "../data/IMovie";
 import { addMovie } from '../data/movies'
 export default function AddMovie() {
-  const [title,setTitle] = useState<string>('')
-  const [genre, setGenre] = useState<string>('')
-  const [year, setYear] = useState<number>(0)
+  const [title,setTitle] = useState<string>("")
+  const [genre, setGenre] = useState<string>("")
+  const [year, setYear] = useState<string>("")
   
   const [errorExists,setErrorExists] = useState<boolean>(false)
-  const [error, setError] = useState<string>('')
+  const [error, setError] = useState<string>("")
   const [success, setSuccess] = useState<boolean>(false)
   
   useEffect(() =>{
@@ -50,10 +50,8 @@ export default function AddMovie() {
         setGenre={setGenre}
         setYear={setYear}
         handleSubmit={submitMovie}
+        submitText='Add movie'
       />
-      <button className="button-style">
-        Add Movie
-      </button>
     </div>
   )
 }

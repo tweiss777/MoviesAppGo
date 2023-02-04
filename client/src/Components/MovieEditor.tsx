@@ -1,23 +1,27 @@
 import { useState } from "react"
 import '../scss/MovieEditor.scss'
 import '../scss/AddMoviePage.scss'
+import { IMovie } from "../data/IMovie"
 interface IProps {
   title: string,
   genre: string,
-  year: number,
+  year: string,
   setTitle: Function,
   setGenre: Function,
   setYear: Function
   handleSubmit: Function
+  submitText: string
 }
 
-export default function MovieEditor({title,genre,year, setTitle, setYear, setGenre, handleSubmit}: IProps) {
+export default function MovieEditor({title,genre,year, setTitle, setYear, setGenre, handleSubmit, submitText}: IProps) {
 
   function submitData(){
-    const movie = {
+    const movie: IMovie = {
+      id: Math.floor(Math.random() * 100000),
       title,
       genre,
-      year,
+      year: parseInt(year),
+
     }
     handleSubmit(movie)
   }
@@ -37,8 +41,8 @@ export default function MovieEditor({title,genre,year, setTitle, setYear, setGen
         <input type="text" value={year} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setYear(event.target.value)} />
       </div>
       <div className="form-row">
-        <button onClick={submitData} className="btn-style">
-          Submit
+        <button onClick={submitData} className="button-style">
+          { submitText }
         </button>
       </div>
     </div>

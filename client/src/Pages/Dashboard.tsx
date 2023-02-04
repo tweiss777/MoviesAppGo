@@ -27,7 +27,7 @@ export default function DashBoard(){
      fetchMovies()
   },[])
 
-  const movieComponents: JSX.Element [] = movies.map(movie => <MovieItem key={movie.id} id={movie.id} movie_name={movie.movie_name} year={movie.year} genre={movie.genre} />)
+  const movieComponents: JSX.Element [] = movies.map(movie => <MovieItem key={movie.id} id={movie.id} title={movie.title} year={movie.year} genre={movie.genre} />)
 
   return (
     <div className='dashboard-container'>
