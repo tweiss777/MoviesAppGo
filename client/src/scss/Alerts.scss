@@ -1,0 +1,14 @@
+@use './colors.scss';
+.alert-success{
+    background-color: colors.$success-background;
+    color: colors.$success-text;
+}
+
+.alert-warning{
+
+}
+
+.alert-danger{
+    background-color: colors.$danger-background;
+    color: colors.$danger-text; 
+}

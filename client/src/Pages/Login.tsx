@@ -14,7 +14,6 @@ export default function Login() {
   const { login, isAuthenticating } = useAuthentication()
   useEffect(() => {
     if (cookie.token) {
-      console.log(history)
       history.back()
     }
   })

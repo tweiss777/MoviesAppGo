@@ -2,10 +2,12 @@
 @use './colors.scss';
 
 .add-movie{
+  margin: auto 10rem;
   .button-style{
+    height: 30px;
     border-radius: 10px;
     border: solid 1px colors.$go-dark-blue;
-    margin: 10px .5rem; 
+    margin: 10px auto; 
     background-color: colors.$go-blue ;
     color: colors.$go-dark-blue ;
     width: 300px;

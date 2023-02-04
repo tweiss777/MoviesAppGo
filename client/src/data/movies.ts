@@ -13,15 +13,6 @@ export async function getMovies(): Promise<IMovie[]>{
 
 export async function addMovie(movie:IMovie){
   try{
-    console.log('movie to be added')
-     const newMovie = movie //{
-    //   "id": 11,
-    //   "title": movie.title,
-    //   "genre": movie.genre,
-    //   "year": parseInt(movie.year)
-    // }
-    
-    console.log(newMovie)
     const { data } = await axios.post('/v1/movies/add-movie',movie)
     return data 
   } catch(err){

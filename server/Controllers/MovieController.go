@@ -19,6 +19,7 @@ func Welcome(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetAllMovies(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Getting all movies")
 	movies := MovieData.GetAllMovies()
 
 	// how responses are returned
